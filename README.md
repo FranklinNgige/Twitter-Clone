@@ -5,6 +5,9 @@ To make the project simple, we do not have a sign/login function.
 So there are not user accounts and follow function. You can challenge after you finish the course.
 ```
 Check out [LIVE DEMO](https://franklin-twitter.herokuapp.com/) here!!
+
+<img width="1307" alt="Screenshot 2022-04-27 at 12 40 49 PM" src="https://user-images.githubusercontent.com/91930170/165473745-849799bd-d151-4c9b-91e2-daf0c540a543.png">
+
 ## Tech used
 ```
 * Html
