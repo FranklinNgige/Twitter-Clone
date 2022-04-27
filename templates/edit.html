@@ -23,7 +23,9 @@
         placeholder="{{posts.body}}"
         required
       ></textarea>
-      <img src="{{posts.image.url}}" alt="" class="postimage"><br><br>
+      {% if post.image.url %}
+      <img src="{{post.image.url}}" alt="" class="postimage" />
+      {% endif %}
       <input
         type="file"
         name="image"
