@@ -29,7 +29,11 @@ SECRET_KEY = 'django-insecure-5j^p0-7j^k03q8yooag#ey=w-d=1wy90u$q@_bp0ywpbc0-hoh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ["*"]
+X_FRAME_OPTIONS = "*"
+CORS_ORIGIN_ALLOW_ALL = True
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1.8000/', '']
 
 
 # Application definition
@@ -42,11 +46,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts',
-    'cloudinary'
+    'cloudinary',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -82,14 +88,22 @@ WSGI_APPLICATION = 'django_forum.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dekiu5b67ht0m9',
-        'USER': 'vwqzgnxkkobmeg',
-        'HOST': 'ec2-3-211-6-217.compute-1.amazonaws.com',
-        'PORT': 5432,
-        'PASSWORD': '91ef8d8696582a6323edb5de014fa26617309dfdb7437d496957475934a78bc1',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'dekiu5b67ht0m9',
+#         'USER': 'vwqzgnxkkobmeg',
+#         'HOST': 'ec2-3-211-6-217.compute-1.amazonaws.com',
+#         'PORT': 5432,
+#         'PASSWORD': '91ef8d8696582a6323edb5de014fa26617309dfdb7437d496957475934a78bc1',
+#     }
+# }
 
 
 # Password validation
